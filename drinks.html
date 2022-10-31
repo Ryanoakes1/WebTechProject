@@ -1,0 +1,142 @@
+<html>
+  <head>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="author" content="Ryan oakes" />
+    <meta name="keywords" content="travel, ireland" />
+    <meta name="description" content="My Trip to Ireland" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: beige;
+        padding: 0;
+        margin: 0;
+      }
+      .navbar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+      }
+
+      .navbar li {
+        float: left;
+      }
+
+      .navbar li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      .navbar li a:hover {
+        background-color: #111;
+      }
+      .selected {
+        background-color: rgb(34, 29, 29);
+      }
+
+      h1 {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+      a {
+        font-family: "Roboto", sans-serif;
+      }
+      .centerize {
+        margin-left: 50%;
+        transform: translateX(-50%);
+        width: fit-content;
+      }
+      img {
+        border: solid 1px black;
+        width: 250;
+      }
+      th {
+        padding: 5px 10px;
+      }
+      .submit {
+        padding: 5px;
+        margin-top: 10px;
+        background-color: rgb(156, 156, 105);
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="navbar">
+      <li><a href="index.html">Homepage</a></li>
+      <li><a href="about.html">My Trip to Dublin</a></li>
+      <li><a class="selected" href="drinks.html">My Favorite Drinks</a></li>
+      <li><a href="recommendations.html">My Recommendations</a></li>
+
+      <li class="right-link"><a href="contactme.html">Contact Me</a></li>
+      <li class="right-link"><a href="sitemap.html">Sitemap</a></li>
+    </ul>
+    <h1>My Favorite Drinks</h1>
+    <div class="centerize">
+      <table>
+        <tr>
+          <th>DRINK #1</th>
+          <th>
+            <img
+              src="/images/george-bakos-W4o8Mhol5Ho-unsplash.jpg"
+              alt="DRINK #1 IMG"
+              title="Drink #1"
+            />
+          </th>
+          <th>
+            Ireland's most popular Stout. Dublin is home to St. James Gate
+            Brewery the home of Guinness.
+          </th>
+        </tr>
+        <tr>
+          <th>DRINK #2</th>
+          <th>
+            <img
+              src="images/alexander-cifuentes-mhad_4H6S14-unsplash.jpg"
+              alt="DRINK #2 IMG"
+              title="Drink #2"
+            />
+          </th>
+          <th>Heneiken is a beer that is orginally from Amsterdam. This beer is fairly sour has a bright color and is a pale lager beer.</th>
+        </tr>
+        <tr>
+          <th>DRINK #3</th>
+          <th>
+            <img
+              src="images/rhamely-S4GTT9EUb98-unsplash.jpg"
+              alt="DRINK #3 IMG"
+              title="Drink #3"
+            />
+          </th>
+          <th>Peroni is an  italian Beer. It is also a lager beer like Heneiken. Peroni is very refreshing and has a slightly citrus aroma form it.</th>
+        </tr>
+      </table>
+    </div>
+
+    <div class="centerize">
+      <form>
+        <h2>Whats your favorite drink?</h2>
+
+        <label for="drinkselect">Select a drink</label>
+        <select name="drinkselect">
+          <option>DRINK 1</option>
+          <option>DRINK 2</option>
+          <option>DRINK 3</option>
+        </select>
+
+        <input class="submit" type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>
