@@ -63,12 +63,43 @@
         padding: 5px 10px;
       }
       .submit {
-        padding: 5px;
         margin-top: 10px;
-        background-color: rgb(156, 156, 105);
+        background-color: #4caf50;
         color: white;
-        border-radius: 5px;
+        padding: 12px 20px;
+        border: 2px solid black;
+        border-radius: 4px;
         cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+      }
+
+      .submit:hover {
+        background-color: #5cb85c;
+        transform: scale(1.1);
+      }
+
+      .submit:active {
+        background-color: #47a447;
+        transform: scale(0.9);
+      }
+      .highlight {
+        background-color: #ff0;
+        border: 2px solid #333;
+        font-weight: bold;
+      }
+      select {
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      option {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        padding: 12px;
       }
     </style>
   </head>
@@ -83,60 +114,90 @@
       <li class="right-link"><a href="sitemap.html">Sitemap</a></li>
     </ul>
     <h1>My Favorite Drinks</h1>
+    <hr />
     <div class="centerize">
       <table>
-        <tr>
+        <tr id="drink0">
           <th>DRINK #1</th>
           <th>
             <img
               src="/images/george-bakos-W4o8Mhol5Ho-unsplash.jpg"
               alt="DRINK #1 IMG"
               title="Drink #1"
+              class="drink"
             />
           </th>
           <th>
-            Ireland's most popular Stout. Dublin is home to St. James Gate
-            Brewery the home of Guinness.
+            Guinness, a well-known Stout hailing from Ireland, is brewed at St.
+            James Gate Brewery in Dublin, where it has become a beloved and
+            highly sought-after beverage.
           </th>
         </tr>
-        <tr>
+        <tr id="drink1">
           <th>DRINK #2</th>
           <th>
             <img
               src="images/alexander-cifuentes-mhad_4H6S14-unsplash.jpg"
               alt="DRINK #2 IMG"
               title="Drink #2"
+              class="drink"
             />
           </th>
-          <th>Heneiken is a beer that is orginally from Amsterdam. This beer is fairly sour has a bright color and is a pale lager beer.</th>
+          <th>
+            Heneiken is a pale lager beer hailing from the vibrant city of
+            Amsterdam, renowned for its rich cultural history and bustling canal
+            streets. This beer, originally brewed in the heart of the city,
+            boasts a refreshingly sour flavor profile and a bright, golden color
+            that beckons the senses. With its unique taste and rich heritage,
+            Heneiken is a beer that truly embodies the spirit of Amsterdam.
+          </th>
         </tr>
-        <tr>
+        <tr id="drink2">
           <th>DRINK #3</th>
           <th>
             <img
               src="images/rhamely-S4GTT9EUb98-unsplash.jpg"
               alt="DRINK #3 IMG"
               title="Drink #3"
+              id="drink3"
             />
           </th>
-          <th>Peroni is an  italian Beer. It is also a lager beer like Heneiken. Peroni is very refreshing and has a slightly citrus aroma form it.</th>
+          <th>
+            Peroni is an italian Beer. It is also a lager beer like Heneiken.
+            Peroni is very refreshing and has a slightly citrus aroma from it.
+          </th>
         </tr>
       </table>
     </div>
 
     <div class="centerize">
-      <form>
+      <form id="drinkForm">
         <h2>Whats your favorite drink?</h2>
 
         <label for="drinkselect">Select a drink</label>
-        <select name="drinkselect">
-          <option>DRINK 1</option>
-          <option>DRINK 2</option>
-          <option>DRINK 3</option>
+        <select name="drinkselect" id="drinkselect">
+          <option value="0">Guiness</option>
+          <option value="1">Heneiken</option>
+          <option value="2">Peroni</option>
         </select>
 
         <input class="submit" type="submit" value="Submit" />
       </form>
     </div>
+    <script>
+      var form = document.getElementById("drinkForm");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        var selectt = document.getElementById("drinkselect");
+        document.getElementById("drink0").classList.remove("highlight");
+        document.getElementById("drink1").classList.remove("highlight");
+        document.getElementById("drink2").classList.remove("highlight");
+        document
+          .getElementById("drink" + selectt.value)
+          .classList.add("highlight");
+      });
+    </script>
   </body>
 </html>

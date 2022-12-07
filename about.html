@@ -3,7 +3,7 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
-    <meta name="author" content="Ryan oakes" />
+    <meta name="author" content="Ryan Oakes" />
     <meta name="keywords" content="travel, ireland" />
     <meta name="description" content="My Trip to Ireland" />
     <style>
@@ -14,12 +14,15 @@
         padding: 0;
         margin: 0;
       }
+
       .navbar {
+        z-index: 10;
         list-style-type: none;
         margin: 0;
         padding: 0;
         overflow: hidden;
         background-color: #333;
+        display: block;
       }
 
       .navbar li {
@@ -36,6 +39,40 @@
 
       .navbar li a:hover {
         background-color: #111;
+      }
+
+      .visible {
+        opacity: 1;
+      }
+      .invisible {
+        opacity: 1;
+      }
+      .hidden {
+        opacity: 0;
+        width: 0px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .invisible {
+          opacity: 0;
+          height: 0px;
+          width: 0px;
+        }
+        .hidden {
+          opacity: 1;
+          width: 50px;
+          margin-left: 50%;
+          transform: translateX(-50%);
+        }
+        .navbar li {
+          float: none;
+        }
+      }
+      .hamburger {
+        width: 35px;
+        height: 5px;
+        background-color: black;
+        margin: 6px 0;
       }
       .selected {
         background-color: rgb(34, 29, 29);
@@ -59,42 +96,118 @@
         border: solid 1px black;
         width: 250;
       }
+      .textbody {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+      }
     </style>
   </head>
   <body>
     <ul class="navbar">
-      <li><a href="index.html">Homepage</a></li>
-      <li><a class="selected" href="about.html">My Trip to Dublin</a></li>
-      <li><a href="drinks.html">My Favorite Drinks</a></li>
-      <li><a href="recommendations.html">My Recommendations</a></li>
+      <li class="hidden" onclick="toggleMenu()">
+        <div class="hamburger"></div>
+        <div class="hamburger"></div>
+        <div class="hamburger"></div>
+      </li>
+      <li class="invisible"><a href="index.html">Homepage</a></li>
+      <li class="invisible">
+        <a class="selected" href="about.html">My Trip to Dublin</a>
+      </li>
+      <li class="invisible"><a href="drinks.html">My Favorite Drinks</a></li>
+      <li class="invisible">
+        <a href="recommendations.html">My Recommendations</a>
+      </li>
 
-      <li class="right-link"><a href="contactme.html">Contact Me</a></li>
-      <li class="right-link"><a href="sitemap.html">Sitemap</a></li>
+      <li class="invisible right-link">
+        <a href="contactme.html">Contact Me</a>
+      </li>
+      <li class="invisible right-link"><a href="sitemap.html">Sitemap</a></li>
     </ul>
-    <h1>About my Trip</h1>
+    <div class="textbody">
+      <h1>About my Trip</h1>
+      <hr />
+      <p>
+        The National Library of Ireland is a large research library located in
+        Dublin, the capital city of Ireland. The library is home to a wide range
+        of collections related to Irish history, literature, and culture. In
+        addition to housing a large collection of books and manuscripts, the
+        library also hosts exhibitions and events.
+      </p>
+      <p>
+        The photo in question was taken outside of the National Library of
+        Ireland during a visit by the speaker and their Irish History class. The
+        purpose of the visit was to view an exhibit dedicated to W. B. Yeats, a
+        famous Irish poet and one of Ireland's most important literary figures.
+        Yeats was the first Irish person to win a Nobel Prize in Literature,
+        which he was awarded in 1923.
+      </p>
+      <p>
+        Yeats was born in Dublin in 1865 and grew up in a family with a strong
+        interest in literature and the arts. He began writing poetry at a young
+        age and went on to become one of the most celebrated poets of the 20th
+        century. His work is known for its exploration of Irish folklore,
+        mythology, and spirituality, and he is considered one of the leading
+        figures of the Irish Literary Revival movement.
+      </p>
+      <p>
+        In addition to his Nobel Prize, Yeats was also awarded the Presidential
+        Medal of Freedom by the United States government in 1964. He is
+        remembered as a key figure in Irish literature and culture, and his work
+        continues to be studied and celebrated by readers and scholars around
+        the world.
+      </p>
+      <div class="centerize">
+        <img
+          src="/images/IMG-5225.jpg"
+          alt="Image of Ireland"
+          title="Ireland"
+          onmouseover="this.src='images/image_67220225.JPG';"
+          onmouseout="this.src='/images/IMG-5225.jpg';"
+        />
+      </div>
 
-    <p>
-      This photo I took outside of the National Library of Ireland in Dublin. I
-      took an Irish History course and this was when our class visited a Yates
-      exhibit. Yates was a very famous Irish Poet who has a Nobel Prize in
-      Literature and is the first Irish person to accomplish that feat.
-    </p>
-    <div class="centerize">
-      <img src="/images/IMG-5225.jpg" alt="Image of Ireland" title="Ireland" />
+      <p>
+        This photo shows me standing in the city centre of Ireland, next to the
+        River Liffy. The River Liffy is a major waterway that flows through
+        Dublin and into the sea. Although it is a beautiful river, it is not
+        safe for swimming due to the high levels of sewage that flows into it.
+        In the past, the River Liffy played a crucial role in the trade and
+        commerce of Dublin, as it provided a direct route to the sea and allowed
+        Dublin to connect with other countries by water. Today, it remains an
+        important part of the city's landscape and continues to be a source of
+        pride for the people of Ireland.
+      </p>
+      <div class="centerize">
+        <img
+          src="/images/IMG-5355.JPG"
+          alt="Another Image of Ireland"
+          title="Ireland "
+          onmouseover="this.src='images/image_50432001.JPG';"
+          onmouseout="this.src='/images/IMG-5355.jpg';"
+        />
+      </div>
     </div>
 
-    <p>
-      This is a photo of me in the city centre of Ireland next to the River
-      Liffy.You cannot go swimming in the water as it goes directly into the bay
-      and has a lot of sewage going into it. This river was used in trading and
-      for connecting Dublin to other countries by sea.
-    </p>
-    <div class="centerize">
-      <img
-        src="/images/IMG-5355.JPG"
-        alt="Another Image of Ireland"
-        title="Ireland "
-      />
-    </div>
+    <script>
+      function toggleMenu() {
+        var invisibles = [...document.getElementsByClassName("invisible")];
+        var visibles = [...document.getElementsByClassName("visible")];
+        console.log("in", invisibles);
+        console.log("v", visibles);
+
+        for (let i = 0; i < invisibles.length; i++) {
+          console.log("in", invisibles[i]);
+          invisibles[i].classList.remove("invisible");
+          invisibles[i].classList.add("visible");
+        }
+
+        for (let i = 0; i < visibles.length; i++) {
+          console.log("v", visibles[i]);
+          visibles[i].classList.remove("visible");
+          visibles[i].classList.add("invisible");
+        }
+      }
+    </script>
   </body>
 </html>

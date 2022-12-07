@@ -63,14 +63,40 @@
         display: flex;
         flex-direction: column;
         width: 50%;
+        margin-top: 25px;
+      }
+
+      .fadeThisElem {
+        animation: fadeOut 0.5s linear forwards;
+      }
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
       }
       .submit {
-        padding: 5px;
         margin-top: 10px;
-        background-color: rgb(156, 156, 105);
+        background-color: #4caf50;
         color: white;
-        border-radius: 5px;
+        padding: 12px 20px;
+        border: 2px solid black;
+        border-radius: 4px;
         cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+      }
+
+      .submit:hover {
+        background-color: #5cb85c;
+        transform: scale(1.1);
+      }
+
+      .submit:active {
+        background-color: #47a447;
+        transform: scale(0.9);
       }
     </style>
   </head>
@@ -86,17 +112,54 @@
       </li>
       <li class="right-link"><a href="sitemap.html">Sitemap</a></li>
     </ul>
-    <form class="formbox centerize">
+    <h1>Contact me!</h1>
+    <hr />
+    <p>
+      I'm always looking for ways to improve my blog and provide the best
+      content possible for my readers. That's why I'm reaching out to ask for
+      your feedback.
+    </p>
+    <form
+      class="formbox centerize"
+      id="contactbox"
+      onsubmit="return validateForm()"
+    >
       <label for="name">Your Name: </label>
-      <input name="name" type="text" />
+      <input name="name" type="text" id="namein" />
 
       <label for="email">Email: </label>
-      <input name="email" type="email" />
+      <input name="email" type="email" id="emailin" />
 
       <label for="comment">Comment: </label>
-      <textarea name="comment"></textarea>
+      <textarea id="commentin" name="comment"></textarea>
 
       <input class="submit" type="submit" value="Submit" />
     </form>
+    <script>
+      function validateForm() {
+        var emailv = document.getElementById("emailin").value;
+        var namev = document.getElementById("namein").value;
+        var commentv = document.getElementById("commentin").value;
+
+        if (namev == "") {
+          alert("No name");
+          return false;
+        }
+        if (commentv == "") {
+          alert("No comment");
+          return false;
+        }
+
+        var re =
+          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (!re.test(String(emailv).toLowerCase())) {
+          alert("Email is invalid");
+          return false;
+        }
+        document.getElementById("contactbox").classList.add("fadeThisElem");
+
+        return true;
+      }
+    </script>
   </body>
 </html>

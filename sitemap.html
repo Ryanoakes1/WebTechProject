@@ -64,8 +64,14 @@
         flex-direction: column;
       }
       a {
-        text-decoration: none;
-        color: rgb(78, 78, 78);
+        color: #0094ff; /* Sets the text color */
+        text-decoration: none; /* Removes the default underline */
+        font-weight: bold; /* Makes the text bold */
+      }
+
+      a:hover {
+        color: #ffb606; /* Sets the text color when hovering */
+        text-decoration: underline; /* Adds an underline on hover */
       }
     </style>
   </head>
@@ -82,6 +88,7 @@
       </li>
     </ul>
     <h1>Sitemap</h1>
+    <hr />
     <div class="sitemap-box centerize">
       <h2>My Trip</h2>
       <a href="about.html">About my Trip</a>
